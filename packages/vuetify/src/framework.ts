@@ -20,6 +20,7 @@ import type { RtlOptions } from '@/composables/rtl'
 import type { ThemeOptions } from '@/composables/theme'
 import { createDate, createDateAdapter, DateAdapterSymbol, DateSymbol } from './composables/date'
 import type { IUtils } from '@date-io/core/IUtils'
+import type { DateAdapter } from './adapters/date-adapter'
 
 export * from './composables'
 
@@ -34,7 +35,7 @@ export interface VuetifyOptions {
   icons?: IconOptions
   locale?: (LocaleOptions & RtlOptions) | (LocaleAdapter & RtlOptions)
   date?: {
-    adapter: IUtils<any>
+    adapter: DateAdapter<any>
   }
 }
 
