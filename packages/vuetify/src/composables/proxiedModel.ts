@@ -26,7 +26,7 @@ export function useProxiedModel<
     )
   })
 
-  const internal = ref(transformIn(props[prop] ?? defaultValue)) as Ref<Inner>
+  const internal = ref(transformIn(props[prop])) as Ref<Inner>
 
   return computed<Inner extends any[] ? Readonly<Inner> : Inner>({
     get (): any {
