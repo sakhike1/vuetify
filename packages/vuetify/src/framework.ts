@@ -18,8 +18,7 @@ import type { IconOptions } from '@/composables/icons'
 import type { LocaleAdapter, LocaleOptions } from '@/composables/locale'
 import type { RtlOptions } from '@/composables/rtl'
 import type { ThemeOptions } from '@/composables/theme'
-import { createDate, createDateAdapter, DateAdapterSymbol, DateSymbol } from './composables/date'
-import type { IUtils } from '@date-io/core/IUtils'
+import { createDate, DateAdapterSymbol } from './composables/date'
 import type { DateAdapter } from './adapters/date-adapter'
 
 export * from './composables'
@@ -72,7 +71,7 @@ export const createVuetify = (vuetify: VuetifyOptions = {}) => {
       app.provide(ThemeSymbol, createTheme(app, options.theme))
       app.provide(IconSymbol, createIcons(options.icons))
       app.provide(LocaleAdapterSymbol, createLocale(app, options.locale))
-      app.provide(DateAdapterSymbol, createDateAdapter(options?.date))
+      app.provide(DateAdapterSymbol, createDate(options?.date))
     }
 
     if (!IN_BROWSER) {
